@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Земельные участки</title>
+    <title>Новое Ильинское</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -22,7 +22,7 @@
                             <a href="#" class="nav__link">Наши предложения</a>
                         </li>
                         <li class="nav__item">
-                            <a href="#" class="nav__link">Контакты</a>
+                            <a href="#" class="nav__link" onclick="openModal()">Где мы?</a>
                         </li>
                     </ul>
                 </nav>
@@ -33,6 +33,35 @@
             </div>
         </div>
     </header>
+
+    <!-- Модальное окно -->
+    <div class="modal" id="locationModal">
+        <div class="modal__content">
+            <button class="modal__close" onclick="closeModal()">×</button>
+            <h2 class="modal__title">Где мы</h2>
+            <div class="slider">
+                <div class="slider__container">
+                    <button class="slider__arrow slider__arrow--prev" onclick="prevSlide()">←</button>
+                    <button class="slider__arrow slider__arrow--next" onclick="nextSlide()">→</button>
+                    <div class="slider__track">
+                        <div class="slider__slide">
+                            <img src="assets/images/location_1.jpg" alt="Локация 1">
+                        </div>
+                        <div class="slider__slide">
+                            <img src="assets/images/location_2.jpeg" alt="Локация 2">
+                        </div>
+                        <div class="slider__slide">
+                            <img src="assets/images/location_3.jpeg" alt="Локация 3">
+                        </div>
+                        <div class="slider__slide">
+                            <img src="assets/images/location_4.jpeg" alt="Локация 4">
+                        </div>
+                    </div>
+                </div>
+                <div class="slider__dots"></div>
+            </div>
+        </div>
+    </div>
 
     <section class="hero">
         <div class="container">
@@ -80,10 +109,9 @@
         <div class="container">
             <div class="benefits__inner">
                 <div class="benefits__image">
-                    <img src="assets/images/placeholder.jpg" alt="Преимущества">
+                    <img src="assets/images/adv.jpeg" alt="Преимущества">
                 </div>
                 <div class="benefits__content">
-                    <span class="benefits__label">Преимущества</span>
                     <h2 class="benefits__title">Почему стоит выбрать наши земельные участки?</h2>
                     <p class="benefits__text">Мы предлагаем земельные участки с отличной инфраструктурой и удобным
                         доступом. Наша команда обеспечивает полное сопровождение сделки, чтобы вы могли сосредоточиться
@@ -100,27 +128,35 @@
     <section class="news">
         <div class="container">
             <div class="news__header">
-                <span class="news__label">Tagline</span>
                 <h2 class="news__title">Новости и события</h2>
-                <p class="news__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius
-                    enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut
-                    commodo diam libero vitae erat.</p>
+                <p class="news__description">Рады сообщить, что теперь все новости и события Новое Ильинское будут
+                    публиковаться в этом разделе. Следите за обновлениями, чтобы быть в курсе самых свежих новостей!</p>
             </div>
             <div class="news__grid">
                 <article class="news-card">
                     <div class="news-card__content">
                         <span class="news-card__date">01.03.2025</span>
-                        <h3 class="news-card__title">Старт продаж земельных участков в районе</h3>
-                        <p class="news-card__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                            varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor
-                            interdum nulla, ut commodo diam libero vitae erat.</p>
+                        <h3 class="news-card__title">Мы начинаем продавать земельные участки в Новое Ильинское</h3>
+                        <p class="news-card__text">Открыта продажа земельных участков в современном и уютном поселке
+                            "Новое Ильинское"!
+
+                            Идеальное место для жизни и отдыха
+                            Экологически чистый район
+                            Развитая инфраструктура и удобная транспортная доступность
+
+                            Не упустите возможность стать владельцем земли в перспективном месте!
+
+                            Звоните сейчас и выбирайте свой участок первыми!</p>
                         <div class="news-card__buttons">
                             <button class="btn btn-outline">Позвонить</button>
                             <a href="#" class="btn-link">Выбрать <span class="arrow">→</span></a>
                         </div>
                     </div>
                     <div class="news-card__image">
-                        <img src="assets/images/placeholder.jpg" alt="Видео, фото, картинки">
+                        <video class="news-video" autoplay muted loop playsinline>
+                            <source src="assets/news/news_1.mp4" type="video/mp4">
+                            Ваш браузер не поддерживает видео
+                        </video>
                     </div>
                 </article>
                 <div class="news__divider"></div>
