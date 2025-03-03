@@ -6,8 +6,54 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Roboto", Arial, sans-serif;
   line-height: 1.5;
+  padding-top: 120px; /* Высота хедера + отступ */
+}
+
+/* Обновим стили заголовков и текста */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: 700;
+}
+
+.hero__title {
+  font-weight: 700;
+}
+
+.hero__text {
+  font-weight: 300;
+}
+
+.nav__link {
+  font-weight: 500;
+}
+
+.btn {
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: 500;
+}
+
+.modal__title {
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: 700;
+}
+
+.features__title {
+  font-weight: 700;
+}
+
+.features__text {
+  font-weight: 300;
+}
+
+.features__item h3 {
+  font-weight: 500;
 }
 
 /* Container */
@@ -21,7 +67,6 @@ body {
 .btn {
   padding: 10px 20px;
   border-radius: 4px;
-  font-weight: 500;
   cursor: pointer;
   transition: all 0.3s;
 }
@@ -48,9 +93,14 @@ body {
 
 /* Header */
 .header {
-  padding: 20px 0;
+  padding: 10px 0;
   background: #fff;
   border-bottom: 1px solid #eee;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100;
 }
 
 .header__inner {
@@ -59,11 +109,9 @@ body {
   justify-content: space-between;
 }
 
-.logo {
-  font-size: 24px;
-  font-weight: 700;
-  text-decoration: none;
-  color: #000;
+.logo-img {
+  width: 100px;
+  height: 100px;
 }
 
 .nav__list {
@@ -100,7 +148,6 @@ body {
 
 .hero__title {
   font-size: 48px;
-  font-weight: 700;
   margin-bottom: 20px;
 }
 
@@ -135,7 +182,7 @@ body {
 
 @media (max-width: 576px) {
   .header__inner {
-    flex-direction: column;
+    /* flex-direction: column; */
     gap: 20px;
   }
 
@@ -178,7 +225,6 @@ body {
 
 .features__title {
   font-size: 36px;
-  font-weight: 700;
   margin-bottom: 20px;
 }
 
@@ -235,7 +281,6 @@ body {
 
 .benefits__title {
   font-size: 36px;
-  font-weight: 700;
   margin-bottom: 20px;
 }
 
@@ -329,7 +374,6 @@ body {
 
 .news__title {
   font-size: 36px;
-  font-weight: 700;
   margin-bottom: 20px;
 }
 
@@ -477,7 +521,6 @@ body {
 
 .contact__title {
   font-size: 36px;
-  font-weight: 700;
   margin-bottom: 20px;
 }
 
@@ -661,7 +704,6 @@ body {
 
 .modal__title {
   font-size: 32px;
-  font-weight: 700;
   margin-bottom: 30px;
   text-align: center;
 }
@@ -801,5 +843,121 @@ body {
 
   .slider__slide img {
     height: 200px;
+  }
+}
+
+/* Бургер-меню */
+.burger-menu {
+  display: none;
+  width: 30px;
+  height: 24px;
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.burger-menu span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #000;
+  position: absolute;
+  left: 0;
+  transition: all 0.3s;
+}
+
+.burger-menu span:first-child {
+  top: 0;
+}
+
+.burger-menu span:nth-child(2) {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.burger-menu span:last-child {
+  bottom: 0;
+}
+
+/* Анимация бургер-меню */
+.burger-menu.active span:first-child {
+  transform: rotate(45deg);
+  top: 50%;
+}
+
+.burger-menu.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.burger-menu.active span:last-child {
+  transform: rotate(-45deg);
+  bottom: 45%;
+}
+
+/* Мобильное меню */
+.mobile-menu {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+/* Медиа-запросы */
+@media (max-width: 768px) {
+  .burger-menu {
+    display: block;
+    z-index: 101;
+  }
+
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    height: 100vh;
+    background: #fff;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 120px 20px 20px;
+    transition: right 0.3s;
+    z-index: 100;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .mobile-menu.active {
+    right: 0;
+  }
+
+  .nav__list {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .header__buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .header__buttons .btn {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  /* Затемнение фона при открытом меню */
+  .menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 99;
+  }
+
+  .menu-overlay.active {
+    display: block;
   }
 }

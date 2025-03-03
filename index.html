@@ -5,6 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Новое Ильинское</title>
+    <!-- Подключаем шрифт Roboto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -12,23 +16,34 @@
     <header class="header">
         <div class="container">
             <div class="header__inner">
-                <a href="/" class="logo">Logo</a>
-                <nav class="nav">
-                    <ul class="nav__list">
-                        <li class="nav__item">
-                            <a href="#" class="nav__link">Главная страница</a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="#" class="nav__link">Наши предложения</a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="#" class="nav__link" onclick="openModal()">Где мы?</a>
-                        </li>
-                    </ul>
-                </nav>
-                <div class="header__buttons">
-                    <button class="btn btn-outline">Связаться</button>
-                    <button class="btn btn-primary">Выбрать</button>
+                <a href="/" class="logo">
+                    <img class="logo-img" src="assets/images/logo.png" alt="Logo">
+                </a>
+
+                <button class="burger-menu" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <div class="mobile-menu">
+                    <nav class="nav">
+                        <ul class="nav__list">
+                            <li class="nav__item">
+                                <a href="#" class="nav__link">Главная страница</a>
+                            </li>
+                            <li class="nav__item">
+                                <a href="#" class="nav__link">Наши предложения</a>
+                            </li>
+                            <li class="nav__item">
+                                <a href="#" class="nav__link" onclick="openModal()">Где мы?</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="header__buttons">
+                        <button class="btn btn-outline">Связаться</button>
+                        <button class="btn btn-primary">Выбрать</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -184,7 +199,9 @@
         <div class="container">
             <div class="footer__inner">
                 <div class="footer__top">
-                    <a href="/" class="logo">Logo</a>
+                    <a href="/" class="logo">
+                        <img class="logo-img" src="assets/images/logo.png" alt="Logo">
+                    </a>
                     <nav class="footer__nav">
                         <ul class="footer__nav-list">
                             <li><a href="#">Связаться с нами</a></li>

@@ -114,3 +114,55 @@ function initSlider() {
 document.addEventListener("DOMContentLoaded", function () {
   initSlider();
 });
+
+// Добавьте эти функции в начало файла
+function toggleMenu() {
+  const burger = document.querySelector(".burger-menu");
+  const menu = document.querySelector(".mobile-menu");
+  const body = document.body;
+
+  burger.classList.toggle("active");
+  menu.classList.toggle("active");
+
+  // Добавляем/удаляем оверлей
+  let overlay = document.querySelector(".menu-overlay");
+
+  if (!overlay) {
+    overlay = document.createElement("div");
+    overlay.className = "menu-overlay";
+    document.body.appendChild(overlay);
+  }
+
+  overlay.classList.toggle("active");
+  body.style.overflow = body.style.overflow === "hidden" ? "" : "hidden";
+
+  // Закрытие меню при клике на оверлей
+  overlay.onclick = function () {
+    burger.classList.remove("active");
+    menu.classList.remove("active");
+    overlay.classList.remove("active");
+    body.style.overflow = "";
+  };
+}
+
+// Закрытие меню при клике на пункт меню
+document.addEventListener("DOMContentLoaded", function () {
+  const menuLinks = document.querySelectorAll(".nav__link");
+
+  menuLinks.forEach((link) => {
+    link.addEventListener("click", function () {
+      const burger = document.querySelector(".burger-menu");
+      const menu = document.querySelector(".mobile-menu");
+      const overlay = document.querySelector(".menu-overlay");
+
+      if (window.innerWidth <= 768) {
+        burger.classList.remove("active");
+        menu.classList.remove("active");
+        if (overlay) {
+          overlay.classList.remove("active");
+        }
+        document.body.style.overflow = "";
+      }
+    });
+  });
+});
