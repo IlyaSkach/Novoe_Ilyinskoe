@@ -1,3 +1,5 @@
+
+
 // Здесь будет основной JavaScript код
 document.addEventListener("DOMContentLoaded", () => {
   console.log("DOM загружен");
@@ -115,7 +117,7 @@ document.addEventListener("DOMContentLoaded", function () {
   initSlider();
 });
 
-// Добавьте эти функции в начало файла
+// Функции для мобильного меню
 function toggleMenu() {
   const burger = document.querySelector(".burger-menu");
   const menu = document.querySelector(".mobile-menu");

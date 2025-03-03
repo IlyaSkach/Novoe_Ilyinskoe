@@ -171,12 +171,40 @@ h6 {
 }
 
 @media (max-width: 768px) {
-  .nav__list {
+  .header__inner {
     gap: 20px;
   }
 
-  .hero__title {
-    font-size: 32px;
+  .nav__list {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .header__buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .header__buttons .btn {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  /* Затемнение фона при открытом меню */
+  .menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 99;
+  }
+
+  .menu-overlay.active {
+    display: block;
   }
 }
 
@@ -961,3 +989,5 @@ h6 {
     display: block;
   }
 }
+
+

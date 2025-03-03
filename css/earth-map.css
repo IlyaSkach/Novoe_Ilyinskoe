@@ -1,0 +1,266 @@
+/* Earth Map */
+.earth-map {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f0f0f0;
+  z-index: 1000;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+.earth-map__inner {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.earth-map__close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 28px;
+  font-weight: 300;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: #666;
+  transition: color 0.3s;
+  z-index: 2;
+}
+
+.earth-map__close:hover {
+  color: #000;
+}
+
+.map {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%; /* Соотношение сторон 16:9 */
+  background: #fff;
+}
+
+.map-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.map-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Чтобы клики проходили сквозь оверлей к маркерам */
+}
+
+.plot {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-image: rgba(0, 255, 0, 0.3);
+  border: 2px solid rgba(0, 255, 0, 0.5);
+  cursor: pointer;
+  transition: all 0.3s;
+  transform: translate(
+    -50%,
+    -50%
+  ); /* Центрируем маркер относительно его позиции */
+  pointer-events: auto; /* Возвращаем возможность кликать по маркерам */
+}
+
+.plot:hover {
+  background-color: rgba(0, 255, 0, 0.5);
+  transform: translate(-50%, -50%) scale(1.1); /* Увеличиваем при наведении */
+}
+
+.plot.selected {
+  background-color: rgba(255, 165, 0, 0.5);
+  border-color: rgba(255, 165, 0, 0.7);
+  transform: translate(-50%, -50%) scale(1.2);
+}
+
+.info-panel {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  display: none;
+  z-index: 1001;
+}
+
+.info-panel h2 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 24px;
+}
+
+/* .info-panel button {
+  margin-top: 15px;
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.info-panel button:hover {
+  background-color: #0056b3;
+} */
+
+@media (max-width: 768px) {
+  .earth-map {
+    padding: 10px;
+  }
+
+  .earth-map__inner {
+    padding: 20px;
+  }
+
+  .info-panel {
+    width: 90%;
+    max-width: 400px;
+  }
+  .plot {
+    width: 5px;
+    height: 5px;
+  }
+}
+
+/* Добавляем стили для информации об участке */
+.plot-info {
+  margin: 15px 0;
+}
+
+.plot-info__item {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.plot-info__label {
+  color: #666;
+  font-size: 14px;
+}
+
+.plot-info__value {
+  font-weight: 500;
+  font-size: 16px;
+  margin-left: 10px;
+}
+
+/* Обновляем стили для кнопок в info-panel */
+.info-panel__buttons {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.info-panel button {
+  margin-top: 0;
+  flex: 1;
+}
+
+/* Стили для модального окна бронирования */
+.booking-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1002;
+}
+
+.booking-modal__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 400px;
+}
+
+.booking-modal__close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #666;
+}
+
+.booking-form {
+  margin-top: 20px;
+}
+
+.booking-form__item {
+  margin-bottom: 15px;
+}
+
+.booking-form__item label {
+  display: block;
+  margin-bottom: 5px;
+  color: #666;
+}
+
+.booking-form__item input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+/* Стили для кнопок */
+/* .btn-secondary {
+  background-color: #6c757d;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: #5a6268;
+} */
+
+.btn-primary {
+    background: #000;
+    color: #fff;
+    border: none;
+  }
+  
+  .btn-primary:hover {
+    background: #333;
+  }
+  
+  .btn-outline {
+    background: transparent;
+    border: 1px solid #000;
+    color: #000;
+  }
+  
+  .btn-outline:hover {
+    background: #f5f5f5;
+  }

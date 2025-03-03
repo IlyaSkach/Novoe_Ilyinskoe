@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/earth-map.css">
 </head>
 
 <body>
@@ -42,7 +43,7 @@
                     </nav>
                     <div class="header__buttons">
                         <button class="btn btn-outline">Связаться</button>
-                        <button class="btn btn-primary">Выбрать</button>
+                        <button class="btn btn-primary" onclick="goToEarthTest()">Выбрать</button>
                     </div>
                 </div>
             </div>
@@ -85,12 +86,54 @@
                 <p class="hero__text">Мы предлагаем уникальные земельные участки в живописных местах. Откройте для себя
                     новые возможности для жизни и инвестиций.</p>
                 <div class="hero__buttons">
-                    <button class="btn btn-primary">Выбрать</button>
+                    <button class="btn btn-primary" onclick="goToEarthTest()">Выбрать</button>
                     <button class="btn btn-outline">Связаться</button>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Добавьте эту секцию после секции hero -->
+    <section class="earth-map" id="earthMap" style="display: none;">
+        <div class="container">
+            <div class="earth-map__inner">
+                <button class="earth-map__close" onclick="closeEarthMap()">×</button>
+                <div class="map">
+                    <img src="assets/images/map.png" alt="Карта" class="map-image" id="mapImage">
+                    <div class="map-overlay" id="mapOverlay"></div>
+                </div>
+                <div class="info-panel" id="infoPanel">
+                    <h2>Информация об участке</h2>
+                    <div id="plotInfo" class="plot-info">
+                        <!-- Информация будет добавлена через JavaScript -->
+                    </div>
+                    <div class="info-panel__buttons">
+                        <button id="closeInfo" class="btn btn-primary">Закрыть</button>
+                        <button id="bookPlot" class="btn btn-outline ">Забронировать</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Добавляем модальное окно для бронирования -->
+    <div class="booking-modal" id="bookingModal">
+        <div class="booking-modal__content">
+            <button class="booking-modal__close" onclick="closeBookingModal()">×</button>
+            <h3>Бронирование участка <span id="bookingPlotId"></span></h3>
+            <form id="bookingForm" class="booking-form">
+                <div class="booking-form__item">
+                    <label for="name">Ваше имя</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="booking-form__item">
+                    <label for="phone">Номер телефона</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+7 (___) ___ __-__" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Отправить</button>
+            </form>
+        </div>
+    </div>
 
     <section class="features">
         <div class="container">
@@ -164,7 +207,8 @@
                             Звоните сейчас и выбирайте свой участок первыми!</p>
                         <div class="news-card__buttons">
                             <button class="btn btn-outline">Позвонить</button>
-                            <a href="#" class="btn-link">Выбрать <span class="arrow">→</span></a>
+                            <a href="javascript:void(0)" onclick="goToEarthTest()" class="btn-link">Выбрать <span
+                                    class="arrow">→</span></a>
                         </div>
                     </div>
                     <div class="news-card__image">
@@ -226,6 +270,7 @@
     </footer>
 
     <script src="js/main.js"></script>
+    <script src="js/earth-map.js"></script>
 </body>
 
 </html>
