@@ -39,8 +39,6 @@ h6 {
   font-weight: 500;
 }
 
-
-
 .modal__title {
   font-family: "Roboto", Arial, sans-serif;
   font-weight: 700;
@@ -143,24 +141,34 @@ h6 {
 
 /* Hero section */
 .hero {
+  position: relative;
   padding: 100px 0;
-  text-align: center;
+  min-height: 80vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../assets/images/bgi.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
 }
 
 .hero__inner {
-  max-width: 800px;
-  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
 }
 
 .hero__title {
   font-size: 48px;
   margin-bottom: 20px;
+  color: #fff;
 }
 
 .hero__text {
   font-size: 18px;
-  color: #666;
-  margin-bottom: 40px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  color: #fff;
 }
 
 .hero__buttons {
@@ -211,6 +219,19 @@ h6 {
 
   .menu-overlay.active {
     display: block;
+  }
+
+  .hero {
+    padding: 60px 0;
+    min-height: 60vh;
+  }
+
+  .hero__title {
+    font-size: 32px;
+  }
+
+  .hero__text {
+    font-size: 16px;
   }
 }
 

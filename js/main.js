@@ -235,7 +235,7 @@ function callPhone() {
 // Добавляем функцию для открытия Telegram
 function openTelegram() {
   // Ваш username в Telegram
-  const username = "tver_ilinskoye"; // Замените на ваш username в Telegram
+  const username = "realesKate"; // Замените на ваш username в Telegram
 
   // Создаем ссылки для разных платформ
   const webLink = `https://t.me/${username}`;
