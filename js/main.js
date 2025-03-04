@@ -35,19 +35,29 @@ function openModal() {
 
 function closeModal() {
   const modal = document.getElementById("locationModal");
-  if (modal) {
-    modal.style.display = "none";
-    document.body.style.overflow = "";
-  }
+  modal.style.display = "none";
+  document.body.style.overflow = "";
 }
 
-// Закрытие модального окна при клике вне его
-window.onclick = function (event) {
+// Добавляем обработчик для закрытия по клику на крестик
+document.addEventListener("DOMContentLoaded", function () {
+  const closeButtons = document.querySelectorAll(".modal__close");
+  closeButtons.forEach((button) => {
+    button.addEventListener("click", function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      closeModal();
+    });
+  });
+
+  // Закрытие по клику вне модального окна
   const modal = document.getElementById("locationModal");
-  if (event.target === modal) {
-    closeModal();
-  }
-};
+  modal.addEventListener("click", function (e) {
+    if (e.target === modal) {
+      closeModal();
+    }
+  });
+});
 
 // Закрытие модального окна при нажатии Esc
 document.addEventListener("keydown", function (event) {

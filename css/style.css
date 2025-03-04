@@ -849,6 +849,25 @@ h6 {
     padding: 20px;
   }
 
+  .modal__title {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+
+  .modal__close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 30px;
+    height: 30px;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #000;
+    z-index: 10;
+  }
+
   .slider {
     margin: 0 -20px;
   }
@@ -861,6 +880,7 @@ h6 {
     width: 35px;
     height: 35px;
     font-size: 18px;
+    z-index: 5;
   }
 
   .slider__slide img {
@@ -871,6 +891,20 @@ h6 {
 @media (max-width: 576px) {
   .modal__content {
     padding: 15px;
+    margin: 5px;
+  }
+
+  .modal__title {
+    font-size: 18px;
+    padding-right: 30px;
+  }
+
+  .modal__close {
+    right: 5px;
+    top: 5px;
+    width: 25px;
+    height: 25px;
+    font-size: 20px;
   }
 
   .slider {
