@@ -464,22 +464,46 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
+    // Формируем данные для отправки
     const formData = {
-      plotId: currentPlot.id,
       name: name,
       phone: phone,
+      plotId: currentPlot.id,
+      square: currentPlot.square,
     };
 
-    // Здесь можно добавить отправку данных на сервер
-    console.log("Данные для бронирования:", formData);
+    // Отправляем через наш прокси-сервер
+    fetch("send_telegram.php", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.success) {
+          // Закрываем все модальные окна
+          closeBookingModal();
+          const closeInfo = document.getElementById("closeInfo");
+          closeInfo.click();
 
-    // Закрываем все модальные окна
-    closeBookingModal();
-    const closeInfo = document.getElementById("closeInfo");
-    closeInfo.click();
-
-    // Показываем сообщение об успешном бронировании
-    showMessagePopup(`Спасибо, ${name}! Мы свяжемся с вами в ближайшее время.`);
+          // Показываем сообщение об успешном бронировании
+          showMessagePopup(
+            `Спасибо, ${name}! Мы свяжемся с вами в ближайшее время.`
+          );
+        } else {
+          showMessagePopup(
+            "Произошла ошибка при отправке заявки. Пожалуйста, попробуйте позже."
+          );
+        }
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        showMessagePopup(
+          "Произошла ошибка при отправке заявки. Пожалуйста, попробуйте позже."
+        );
+      });
   });
 
   // Закрытие модального окна при клике вне его
