@@ -990,4 +990,27 @@ h6 {
   }
 }
 
+/* Добавляем базовые стили для анимации */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
 
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Добавляем задержку для разных элементов */
+.animate-delay-1 {
+  transition-delay: 0.2s;
+}
+
+.animate-delay-2 {
+  transition-delay: 0.4s;
+}
+
+.animate-delay-3 {
+  transition-delay: 0.6s;
+}

@@ -57,6 +57,7 @@ function initEarthMap() {
 
   // Данные об участках
   const plots = [
+    //группа 1
     {
       id: 874,
       x: 24,
@@ -69,7 +70,7 @@ function initEarthMap() {
       id: 873,
       x: 25,
       y: 35,
-      info: "Участок 875",
+      info: "Участок 873",
       square: 10,
       price: null,
     },
@@ -77,7 +78,7 @@ function initEarthMap() {
       id: 872,
       x: 26,
       y: 31,
-      info: "Участок 876",
+      info: "Участок 872",
       square: 10,
       price: null,
     },
@@ -85,8 +86,293 @@ function initEarthMap() {
       id: 925,
       x: 27,
       y: 27,
-      info: "Участок 877",
+      info: "Участок 925",
       square: 10,
+      price: null,
+    },
+    //группа 2
+    {
+      id: 898,
+      x: 35.3,
+      y: 51,
+      info: "Участок 898",
+      square: 7,
+      price: null,
+    },
+    {
+      id: 897,
+      x: 36,
+      y: 47,
+      info: "Участок 897",
+      square: 10,
+      price: null,
+    },
+    {
+      id: 896,
+      x: 37,
+      y: 43,
+      info: "Участок 896",
+      square: 10,
+      price: null,
+    },
+    //группа 3
+    {
+      id: 906,
+      x: 43,
+      y: 42.5,
+      info: "Участок 906",
+      square: 10,
+      price: null,
+    },
+    {
+      id: 907,
+      x: 42,
+      y: 46,
+      info: "Участок 907",
+      square: 10,
+      price: null,
+    },
+    {
+      id: 908,
+      x: 41,
+      y: 50.5,
+      info: "Участок 908",
+      square: 10,
+      price: null,
+    },
+    {
+      id: 909,
+      x: 40,
+      y: 54.5,
+      info: "Участок 909",
+      square: 10,
+      price: null,
+    },
+    {
+      id: 2271,
+      x: 39,
+      y: 58.5,
+      info: "Участок 2271",
+      square: 9.6,
+      price: null,
+    },
+    {
+      id: 911,
+      x: 47,
+      y: 45,
+      info: "Участок 911",
+      square: 10,
+      price: null,
+    },
+    {
+      id: 912,
+      x: 46,
+      y: 49,
+      info: "Участок 912",
+      square: 10,
+      price: null,
+    },
+    {
+      id: 913,
+      x: 45,
+      y: 53,
+      info: "Участок 913",
+      square: 10,
+      price: null,
+    },
+    {
+      id: 915,
+      x: 44,
+      y: 57,
+      info: "Участок 915",
+      square: 10,
+      price: null,
+    },
+    {
+      id: 916,
+      x: 43,
+      y: 61,
+      info: "Участок 916",
+      square: 10,
+      price: null,
+    },
+    //группа 4
+    {
+      id: 899,
+      x: 46,
+      y: 33,
+      info: "Участок 899",
+      square: 10,
+      price: null,
+    },
+    {
+      id: 900,
+      x: 47,
+      y: 29,
+      info: "Участок 900",
+      square: 10,
+      price: null,
+    },
+    {
+      id: 901,
+      x: 48,
+      y: 25,
+      info: "Участок 901",
+      square: 10,
+      price: null,
+    },
+    {
+      id: 902,
+      x: 49,
+      y: 21,
+      info: "Участок 902",
+      square: 10,
+      price: null,
+    },
+    {
+      id: 903,
+      x: 50,
+      y: 17,
+      info: "Участок 903",
+      square: 11.1,
+      price: null,
+    },
+    {
+      id: 917,
+      x: 49,
+      y: 35,
+      info: "Участок 917",
+      square: 10,
+      price: null,
+    },
+    {
+      id: 918,
+      x: 50,
+      y: 31,
+      info: "Участок 918",
+      square: 10,
+      price: null,
+    },
+    {
+      id: 919,
+      x: 51,
+      y: 27,
+      info: "Участок 919",
+      square: 10,
+      price: null,
+    },
+    {
+      id: 920,
+      x: 52,
+      y: 23,
+      info: "Участок 920",
+      square: 13.8,
+      price: null,
+    },
+    //группа 5
+    {
+      id: 880,
+      x: 38,
+      y: 23,
+      info: "Участок 880",
+      square: 10,
+      price: null,
+    },
+    {
+      id: 881,
+      x: 39,
+      y: 19,
+      info: "Участок 881",
+      square: 10,
+      price: null,
+    },
+    {
+      id: 883,
+      x: 41,
+      y: 16,
+      info: "Участок 883",
+      square: 6.7,
+      price: null,
+    },
+    {
+      id: 889,
+      x: 42,
+      y: 26,
+      info: "Участок 889",
+      square: 10,
+      price: null,
+    },
+    {
+      id: 890,
+      x: 43,
+      y: 22,
+      info: "Участок 890",
+      square: 10,
+      price: null,
+    },
+    {
+      id: 891,
+      x: 44,
+      y: 18,
+      info: "Участок 891",
+      square: 10,
+      price: null,
+    },
+    {
+      id: 892,
+      x: 46,
+      y: 14,
+      info: "Участок 892",
+      square: 8.9,
+      price: null,
+    },
+    //группа 6
+    {
+      id: 904,
+      x: 28,
+      y: 22,
+      info: "Участок 904",
+      square: 10,
+      price: null,
+    },
+    {
+      id: 893,
+      x: 29,
+      y: 17.5,
+      info: "Участок 893",
+      square: 10,
+      price: null,
+    },
+    {
+      id: 882,
+      x: 30,
+      y: 13,
+      info: "Участок 882",
+      square: 10,
+      price: null,
+    },
+    {
+      id: 2270,
+      x: 32,
+      y: 10,
+      info: "Участок 2270",
+      square: 10,
+      price: null,
+    },
+    {
+      id: 923,
+      x: 34,
+      y: 16,
+      info: "Участок 923",
+      square: 10,
+      price: null,
+    },
+    {
+      id: 924,
+      x: 35,
+      y: 12,
+      info: "Участок 891",
+      square: 7.5,
       price: null,
     },
   ];
@@ -174,7 +460,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const phonePattern = /^\+7\s\(\d{3}\)\s\d{3}\s\d{2}-\d{2}$/;
 
     if (!name || !phonePattern.test(phone)) {
-      alert("Пожалуйста, введите корректное имя и номер телефона");
+      showMessagePopup("Пожалуйста, введите корректное имя и номер телефона");
       return;
     }
 
@@ -193,7 +479,7 @@ document.addEventListener("DOMContentLoaded", function () {
     closeInfo.click();
 
     // Показываем сообщение об успешном бронировании
-    alert("Спасибо! Мы свяжемся с вами в ближайшее время.");
+    showMessagePopup(`Спасибо, ${name}! Мы свяжемся с вами в ближайшее время.`);
   });
 
   // Закрытие модального окна при клике вне его
@@ -218,3 +504,26 @@ function closeEarthMap() {
   earthMap.style.display = "none";
   document.body.style.overflow = "";
 }
+
+// Добавляем функции для работы с поп-апом сообщений
+function showMessagePopup(message) {
+  const popup = document.getElementById("messagePopup");
+  const messageText = popup.querySelector(".message-popup__text");
+  messageText.textContent = message;
+  popup.style.display = "block";
+  document.body.style.overflow = "hidden";
+}
+
+function closeMessagePopup() {
+  const popup = document.getElementById("messagePopup");
+  popup.style.display = "none";
+  document.body.style.overflow = "";
+}
+
+// Добавляем закрытие поп-апа по клику вне его
+window.addEventListener("click", function (event) {
+  const popup = document.getElementById("messagePopup");
+  if (event.target === popup) {
+    closeMessagePopup();
+  }
+});

@@ -1,5 +1,3 @@
-
-
 // Здесь будет основной JavaScript код
 document.addEventListener("DOMContentLoaded", () => {
   console.log("DOM загружен");
@@ -167,4 +165,42 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   });
+});
+
+// Добавляем функцию для анимации при скролле
+function handleScrollAnimation() {
+  const elements = document.querySelectorAll(".animate-on-scroll");
+
+  elements.forEach((element) => {
+    const elementTop = element.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
+
+    // Элемент появляется, когда его верхняя граница находится ниже 80% высоты окна
+    if (elementTop < windowHeight * 0.8) {
+      element.classList.add("visible");
+    }
+  });
+}
+
+// Добавляем обработчики событий
+document.addEventListener("DOMContentLoaded", function () {
+  // Находим все заголовки
+  const titles = document.querySelectorAll(
+    "h1, h2, .hero__title, .features__title, .contact__title"
+  );
+
+  // Добавляем класс для анимации
+  titles.forEach((title, index) => {
+    title.classList.add("animate-on-scroll");
+    // Добавляем разную задержку для разных элементов
+    if (index > 0) {
+      title.classList.add(`animate-delay-${(index % 3) + 1}`);
+    }
+  });
+
+  // Запускаем проверку при загрузке страницы
+  handleScrollAnimation();
+
+  // Добавляем обработчик скролла
+  window.addEventListener("scroll", handleScrollAnimation);
 });

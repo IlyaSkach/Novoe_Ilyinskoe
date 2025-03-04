@@ -17,7 +17,7 @@
     <header class="header">
         <div class="container">
             <div class="header__inner">
-                <a href="/" class="logo">
+                <a href="#" class="logo">
                     <img class="logo-img" src="assets/images/logo.png" alt="Logo">
                 </a>
 
@@ -82,9 +82,9 @@
     <section class="hero">
         <div class="container">
             <div class="hero__inner">
-                <h1 class="hero__title">Ваш идеальный земельный участок ждет вас!</h1>
-                <p class="hero__text">Мы предлагаем уникальные земельные участки в живописных местах. Откройте для себя
-                    новые возможности для жизни и инвестиций.</p>
+                <h1 class="hero__title animate-on-scroll">Ваш идеальный земельный участок ждет вас!</h1>
+                <p class="hero__text animate-on-scroll animate-delay-1">Мы предлагаем уникальные земельные участки в
+                    живописных местах. Откройте для себя новые возможности для жизни и инвестиций.</p>
                 <div class="hero__buttons">
                     <button class="btn btn-primary" onclick="goToEarthTest()">Выбрать</button>
                     <button class="btn btn-outline">Связаться</button>
@@ -135,14 +135,23 @@
         </div>
     </div>
 
+    <!-- Добавляем поп-ап для сообщений после модального окна бронирования -->
+    <div class="message-popup" id="messagePopup">
+        <div class="message-popup__content">
+            <div class="message-popup__text"></div>
+            <button class="btn btn-primary" onclick="closeMessagePopup()">OK</button>
+        </div>
+    </div>
+
     <section class="features">
         <div class="container">
             <div class="features__inner">
                 <div class="features__content">
-                    <h2 class="features__title">Идеальные земельные участки для вашего будущего дома или бизнеса</h2>
-                    <p class="features__text">Мы предлагаем земельные участки в живописных местах с развитой
-                        инфраструктурой. Каждый участок подходит для строительства как жилых, так и коммерческих
-                        объектов.</p>
+                    <h2 class="features__title animate-on-scroll">Идеальные земельные участки для вашего будущего дома
+                        или бизнеса</h2>
+                    <p class="features__text animate-on-scroll animate-delay-1">Мы предлагаем земельные участки в
+                        живописных местах с развитой инфраструктурой. Каждый участок подходит для строительства как
+                        жилых, так и коммерческих объектов.</p>
 
                     <div class="features__grid">
                         <div class="features__item">
@@ -176,7 +185,7 @@
                         на своих планах.</p>
                     <div class="benefits__buttons">
                         <button class="btn btn-outline">Позвоните</button>
-                        <a href="#" class="btn-link">Выбрать <span class="arrow">→</span></a>
+                        <a href="#" onclick="goToEarthTest()" class="btn-link">Выбрать <span class="arrow">→</span></a>
                     </div>
                 </div>
             </div>
@@ -227,9 +236,9 @@
         <div class="container">
             <div class="contact__inner">
                 <div class="contact__content">
-                    <h2 class="contact__title">Свяжитесь с нами сегодня!</h2>
-                    <p class="contact__text">У вас есть вопросы о наших земельных участках? Мы готовы ответить на них и
-                        предоставить всю необходимую информацию.</p>
+                    <h2 class="contact__title animate-on-scroll">Свяжитесь с нами сегодня!</h2>
+                    <p class="contact__text animate-on-scroll animate-delay-1">У вас есть вопросы о наших земельных
+                        участках?</p>
                     <div class="contact__buttons">
                         <button class="btn btn-primary">Позвонить</button>
                         <button class="btn btn-outline">Написать</button>
@@ -243,7 +252,7 @@
         <div class="container">
             <div class="footer__inner">
                 <div class="footer__top">
-                    <a href="/" class="logo">
+                    <a href="#" class="logo">
                         <img class="logo-img" src="assets/images/logo.png" alt="Logo">
                     </a>
                     <nav class="footer__nav">
