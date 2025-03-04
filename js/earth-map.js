@@ -402,8 +402,13 @@ function initEarthMap() {
     // Рассчитываем цену
     const price = plot.square * 12000;
 
-    // Формируем кадастровый номер
-    const cadastralNumber = `69:10:0000032:${plot.id}`;
+    // Формируем кадастровый номер с учетом особых случаев
+    let cadastralNumber;
+    if (plot.id === 2270 || plot.id === 2271) {
+      cadastralNumber = `69:10:0000000:${plot.id}`;
+    } else {
+      cadastralNumber = `69:10:0000032:${plot.id}`;
+    }
 
     // Форматируем информацию об участке с HTML
     plotInfo.innerHTML = `
@@ -472,27 +477,19 @@ document.addEventListener("DOMContentLoaded", function () {
       square: currentPlot.square,
     };
 
-    // Отправляем через наш прокси-сервер
-    fetch("send_telegram.php", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    })
+    // Отправляем запрос через fetch
+    fetch(`./send_telegram.php?${new URLSearchParams(formData)}`)
       .then((response) => response.json())
       .then((data) => {
         if (data.success) {
-          // Закрываем все модальные окна
           closeBookingModal();
           const closeInfo = document.getElementById("closeInfo");
           closeInfo.click();
-
-          // Показываем сообщение об успешном бронировании
           showMessagePopup(
             `Спасибо, ${name}! Мы свяжемся с вами в ближайшее время.`
           );
         } else {
+          console.error("Error:", data.error);
           showMessagePopup(
             "Произошла ошибка при отправке заявки. Пожалуйста, попробуйте позже."
           );
