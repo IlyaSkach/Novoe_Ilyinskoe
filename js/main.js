@@ -6,6 +6,9 @@ document.addEventListener("DOMContentLoaded", () => {
 // Глобальные переменные для слайдера
 let currentSlide = 0;
 let goToSlide;
+let slideInterval; // Для хранения интервала
+let touchStartX = 0;
+let touchEndX = 0;
 
 // Функции для стрелок слайдера
 function nextSlide() {
@@ -72,6 +75,40 @@ function initSlider() {
     dotsContainer.appendChild(dot);
   });
 
+  // Обработчики для свайпов
+  track.addEventListener(
+    "touchstart",
+    function (e) {
+      touchStartX = e.touches[0].clientX;
+    },
+    { passive: true }
+  );
+
+  track.addEventListener(
+    "touchend",
+    function (e) {
+      touchEndX = e.changedTouches[0].clientX;
+      handleSwipe();
+    },
+    { passive: true }
+  );
+
+  // Функция обработки свайпа
+  function handleSwipe() {
+    const swipeThreshold = 50; // Минимальное расстояние для свайпа
+    const diff = touchEndX - touchStartX;
+
+    if (Math.abs(diff) > swipeThreshold) {
+      if (diff > 0) {
+        // Свайп вправо
+        prevSlide();
+      } else {
+        // Свайп влево
+        nextSlide();
+      }
+    }
+  }
+
   // Функция перехода к слайду
   goToSlide = function (index) {
     currentSlide = index;
@@ -82,23 +119,6 @@ function initSlider() {
       dot.classList.toggle("active", i === index);
     });
   };
-
-  // Автоматическое переключение слайдов
-  let slideInterval = setInterval(() => {
-    nextSlide();
-  }, 5000);
-
-  // Останавливаем автопереключение при наведении мыши
-  track.addEventListener("mouseenter", () => {
-    clearInterval(slideInterval);
-  });
-
-  // Возобновляем автопереключение когда мышь уходит
-  track.addEventListener("mouseleave", () => {
-    slideInterval = setInterval(() => {
-      nextSlide();
-    }, 5000);
-  });
 
   // Обработчики клавиш
   document.addEventListener("keydown", function (event) {
@@ -204,3 +224,28 @@ document.addEventListener("DOMContentLoaded", function () {
   // Добавляем обработчик скролла
   window.addEventListener("scroll", handleScrollAnimation);
 });
+
+// Добавляем функцию для звонка
+function callPhone() {
+  // Номер телефона в формате для набора
+  const phoneNumber = "+9600728557"; // Замените на реальный номер телефона
+  window.location.href = `tel:${phoneNumber}`;
+}
+
+// Добавляем функцию для открытия Telegram
+function openTelegram() {
+  // Ваш username в Telegram
+  const username = "tver_ilinskoye"; // Замените на ваш username в Telegram
+
+  // Создаем ссылки для разных платформ
+  const webLink = `https://t.me/${username}`;
+  const mobileLink = `tg://resolve?domain=${username}`;
+
+  // Пробуем открыть приложение Telegram
+  window.location.href = mobileLink;
+
+  // Если приложение не открылось через 100мс, открываем веб-версию
+  setTimeout(() => {
+    window.location.href = webLink;
+  }, 100);
+}

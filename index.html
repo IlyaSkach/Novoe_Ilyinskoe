@@ -34,15 +34,15 @@
                                 <a href="#" class="nav__link">Главная страница</a>
                             </li>
                             <li class="nav__item">
-                                <a href="#" class="nav__link">Наши предложения</a>
+                                <a href="#features" class="nav__link">Наши предложения</a>
                             </li>
                             <li class="nav__item">
-                                <a href="#" class="nav__link" onclick="openModal()">Где мы?</a>
+                                <a href="#locationModal" class="nav__link" onclick="openModal()">Где мы?</a>
                             </li>
                         </ul>
                     </nav>
                     <div class="header__buttons">
-                        <button class="btn btn-outline">Связаться</button>
+                        <button class="btn btn-outline" onclick="callPhone()">Позвонить</button>
                         <button class="btn btn-primary" onclick="goToEarthTest()">Выбрать</button>
                     </div>
                 </div>
@@ -54,23 +54,23 @@
     <div class="modal" id="locationModal">
         <div class="modal__content">
             <button class="modal__close" onclick="closeModal()">×</button>
-            <h2 class="modal__title">Где мы</h2>
+            <h2 class="modal__title">Мы находимся здесь</h2>
             <div class="slider">
                 <div class="slider__container">
                     <button class="slider__arrow slider__arrow--prev" onclick="prevSlide()">←</button>
                     <button class="slider__arrow slider__arrow--next" onclick="nextSlide()">→</button>
                     <div class="slider__track">
                         <div class="slider__slide">
-                            <img src="assets/images/location_1.jpg" alt="Локация 1">
+                            <img src="assets/images/location_3.jpeg" alt="Локация 1">
                         </div>
                         <div class="slider__slide">
-                            <img src="assets/images/location_2.jpeg" alt="Локация 2">
+                            <img src="assets/images/location_4.jpeg" alt="Локация 2">
                         </div>
                         <div class="slider__slide">
-                            <img src="assets/images/location_3.jpeg" alt="Локация 3">
+                            <img src="assets/images/location_2.jpeg" alt="Локация 3">
                         </div>
                         <div class="slider__slide">
-                            <img src="assets/images/location_4.jpeg" alt="Локация 4">
+                            <img src="assets/images/location_1.jpg" alt="Локация 4">
                         </div>
                     </div>
                 </div>
@@ -82,12 +82,13 @@
     <section class="hero">
         <div class="container">
             <div class="hero__inner">
-                <h1 class="hero__title animate-on-scroll">Ваш идеальный земельный участок ждет вас!</h1>
-                <p class="hero__text animate-on-scroll animate-delay-1">Мы предлагаем уникальные земельные участки в
-                    живописных местах. Откройте для себя новые возможности для жизни и инвестиций.</p>
+                <h1 class="hero__title animate-on-scroll">Откройте новые возможности для жизни и инвестиций! </h1>
+                <p class="hero__text animate-on-scroll animate-delay-1">Добро пожаловать в Ильинское, живописное и
+                    уютное село в одном из самых перспективных районов Тверской области! Здесь продаются участки от 7
+                    соток до 1 Га.</p>
                 <div class="hero__buttons">
                     <button class="btn btn-primary" onclick="goToEarthTest()">Выбрать</button>
-                    <button class="btn btn-outline">Связаться</button>
+                    <button class="btn btn-outline" onclick="openTelegram()">Написать в TG</button>
                 </div>
             </div>
         </div>
@@ -143,25 +144,28 @@
         </div>
     </div>
 
-    <section class="features">
+    <section class="features" id="features">
         <div class="container">
             <div class="features__inner">
                 <div class="features__content">
-                    <h2 class="features__title animate-on-scroll">Идеальные земельные участки для вашего будущего дома
-                        или бизнеса</h2>
-                    <p class="features__text animate-on-scroll animate-delay-1">Мы предлагаем земельные участки в
-                        живописных местах с развитой инфраструктурой. Каждый участок подходит для строительства как
-                        жилых, так и коммерческих объектов.</p>
+                    <h2 class="features__title animate-on-scroll">Начните строить свое будущее прямо сейчас!</h2>
+                    <p class="features__text animate-on-scroll animate-delay-1">Покупая участок ИЖС сейчас, вы не просто
+                        покупаете землю для постройки дома, вы приобретаете новые возможности для выбора образа жизни и
+                        инвестируете в благополучие вашей семьи! </p>
 
                     <div class="features__grid">
                         <div class="features__item">
-                            <h3>Уникальные предложения</h3>
-                            <p>Гибкие условия покупки и возможность рассрочки платежа на выгодных условиях.</p>
+                            <h3>Наше предложение</h3>
+                            <p>Участки ИЖС, правильной формы,
+                                в экологически чистом районе, вблизи р. Шоша и живописных озер, в 27 км от Национального
+                                парка Завидово. </p>
                         </div>
                         <div class="features__item">
-                            <h3>Преимущества участков</h3>
-                            <p>Отличное месторасположение, доступ к коммуникациям и возможность индивидуального
-                                планирования.</p>
+                            <h3>Наши преимущества</h3>
+                            <p>Близость к Твери, удобные подъездные пути, возможность подключения к коммуникациям.
+                                Ильинское расположено всего в 8 км от с. Тургиново с развитой инфраструктурой (школа,
+                                дет.сад, поликлиника, МФЦ, пункт выдачи Озон, почта, пожарная часть, ледовая арена,
+                                магазины).</p>
                         </div>
                     </div>
                 </div>
@@ -179,12 +183,12 @@
                     <img src="assets/images/adv.jpeg" alt="Преимущества">
                 </div>
                 <div class="benefits__content">
-                    <h2 class="benefits__title">Почему стоит выбрать наши земельные участки?</h2>
-                    <p class="benefits__text">Мы предлагаем земельные участки с отличной инфраструктурой и удобным
-                        доступом. Наша команда обеспечивает полное сопровождение сделки, чтобы вы могли сосредоточиться
-                        на своих планах.</p>
+                    <h2 class="benefits__title">Почему стоит выбрать наши участки</h2>
+                    <p class="benefits__text">Мы предлагаем гибкие условия покупки, возможность беспроцентной рассрочки
+                        на 12 месяцев и скидки при покупке от 50 соток. Цена за сотку на старте продаж от 10 тыс.руб.! У
+                        нас доброжелательный сервис, мы обеспечиваем полное сопровождение сделки на всех этапах.</p>
                     <div class="benefits__buttons">
-                        <button class="btn btn-outline">Позвоните</button>
+                        <button class="btn btn-outline" onclick="openTelegram()">Написать в TG</button>
                         <a href="#" onclick="goToEarthTest()" class="btn-link">Выбрать <span class="arrow">→</span></a>
                     </div>
                 </div>
@@ -196,26 +200,22 @@
         <div class="container">
             <div class="news__header">
                 <h2 class="news__title">Новости и события</h2>
-                <p class="news__description">Рады сообщить, что теперь все новости и события Новое Ильинское будут
-                    публиковаться в этом разделе. Следите за обновлениями, чтобы быть в курсе самых свежих новостей!</p>
+                <p class="news__description">Рады сообщить, что теперь все новости и события будут публиковаться в этом
+                    разделе. Следите за обновлениями, чтобы оперативно узнавать об изменениях по карте свободных
+                    участков, о работах по благоустройству и других событиях нашего проекта!</p>
             </div>
             <div class="news__grid">
                 <article class="news-card">
                     <div class="news-card__content">
                         <span class="news-card__date">01.03.2025</span>
-                        <h3 class="news-card__title">Мы начинаем продавать земельные участки в Новое Ильинское</h3>
-                        <p class="news-card__text">Открыта продажа земельных участков в современном и уютном поселке
-                            "Новое Ильинское"!
-
-                            Идеальное место для жизни и отдыха
-                            Экологически чистый район
-                            Развитая инфраструктура и удобная транспортная доступность
-
-                            Не упустите возможность стать владельцем земли в перспективном месте!
-
-                            Звоните сейчас и выбирайте свой участок первыми!</p>
+                        <h3 class="news-card__title">Мы начинаем продавать участки!</h3>
+                        <p class="news-card__text">Продажи открыты, к покупке доступна первая очередь участков площадью
+                            7-11 соток, а также два больших участка, 1,9 и 4,2 Га. Приехать на осмотр можно
+                            самостоятельно, съезд в Ильинское с Тургиновского шоссе налево. Добраться в Ильинское можно
+                            и без автомобиля, на рейсовом автобусе № 133 Тверь-Тургиново. Свяжитесь с нами после осмотра
+                            и забронируйте понравившийся участок! </p>
                         <div class="news-card__buttons">
-                            <button class="btn btn-outline">Позвонить</button>
+                            <button class="btn btn-outline" onclick="openTelegram()">Написать в TG</button>
                             <a href="javascript:void(0)" onclick="goToEarthTest()" class="btn-link">Выбрать <span
                                     class="arrow">→</span></a>
                         </div>
@@ -240,8 +240,8 @@
                     <p class="contact__text animate-on-scroll animate-delay-1">У вас есть вопросы о наших земельных
                         участках?</p>
                     <div class="contact__buttons">
-                        <button class="btn btn-primary">Позвонить</button>
-                        <button class="btn btn-outline">Написать</button>
+                        <button class="btn btn-primary" onclick="callPhone()">Позвонить</button>
+                        <button class="btn btn-outline" onclick="openTelegram()">Написать в TG</button>
                     </div>
                 </div>
             </div>
@@ -257,11 +257,11 @@
                     </a>
                     <nav class="footer__nav">
                         <ul class="footer__nav-list">
-                            <li><a href="#">Связаться с нами</a></li>
-                            <li><a href="#">Наши предложения</a></li>
-                            <li><a href="#">Часто задаваемые</a></li>
-                            <li><a href="#">О нас</a></li>
-                            <li><a href="#">Контакты</a></li>
+                            <li><a onclick="callPhone()" href="#">Позванить нам</a></li>
+                            <li><a onclick="openTelegram()" href="#">Написать нам в TG</a></li>
+                            <li><a href="#">Главная страница</a></li>
+                            <li><a href="#features">Наши предложения</a></li>
+                            <li><a onclick="openModal()" href="#">Где мы?</a></li>
                         </ul>
                     </nav>
                 </div>
