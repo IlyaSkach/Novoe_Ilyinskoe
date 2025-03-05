@@ -274,3 +274,34 @@ const utils = {
   addClass: (element, className) => element.classList.add(className),
   removeClass: (element, className) => element.classList.remove(className),
 };
+
+// Найдите функцию отправки формы и добавьте токен
+function sendForm(formData) {
+    const data = {
+        token: 'novoeilinskoe_2024', // Тот же токен, что в PHP
+        name: formData.name,
+        phone: formData.phone,
+        plotId: formData.plotId,
+        square: formData.square
+    };
+
+    fetch('/send_telegram.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => response.json())
+    .then(result => {
+        if (result.success) {
+            alert('Заявка успешно отправлена!');
+        } else {
+            alert('Ошибка при отправке заявки');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('Произошла ошибка при отправке');
+    });
+}

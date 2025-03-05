@@ -1,4 +1,26 @@
 <?php
+// Добавьте проверку токена для безопасности
+define('SECURE_TOKEN', 'novoeilinskoe_2024'); // Используйте более сложный токен в продакшене
+
+// Настройте пути для логов
+ini_set('error_log', $_SERVER['DOCUMENT_ROOT'] . '/logs/error.log');
+
+// Добавьте проверку origin для защиты от CSRF
+$allowed_origins = [
+    'https://novoeilinskoe.ru',
+    'http://novoeilinskoe.ru',
+    'https://www.novoeilinskoe.ru',
+    'http://www.novoeilinskoe.ru'
+];
+
+if (isset($_SERVER['HTTP_ORIGIN'])) {
+    if (in_array($_SERVER['HTTP_ORIGIN'], $allowed_origins)) {
+        header('Access-Control-Allow-Origin: ' . $_SERVER['HTTP_ORIGIN']);
+    } else {
+        die('Unauthorized origin');
+    }
+}
+
 // Логируем все ошибки в файл
 ini_set('log_errors', 1);
 ini_set('error_log', 'error.log');
@@ -10,7 +32,6 @@ error_reporting(0);
 
 // Устанавливаем заголовки для CORS и JSON
 header('Content-Type: application/json; charset=utf-8');
-header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: POST, GET, OPTIONS');
 header('Access-Control-Allow-Headers: Content-Type');
 
@@ -20,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 }
 
 // Добавить проверку безопасности
-if (!isset($_POST['token']) || $_POST['token'] !== 'ваш_секретный_токен') {
+if (!isset($_POST['token']) || $_POST['token'] !== 'novoeilinskoe_2024') {
     die('Unauthorized access');
 }
 
@@ -47,8 +68,8 @@ if (empty($name) || empty($phone) || empty($plotId)) {
 
 try {
     $botToken = '7480928940:AAHTjrTEoVRfIqRYw74cU1yzjpUMdskcW-Y';
-    $chatId = '7492518102';
-    // $chatId = '271823315';
+    // $chatId = '7492518102';
+    $chatId = '271823315';
 
     $message = "🏠 Новая заявка на бронирование участка!\n\n";
     $message .= "👤 Имя: $name\n";
