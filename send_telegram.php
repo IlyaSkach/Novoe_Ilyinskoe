@@ -19,12 +19,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     exit(0);
 }
 
+// Добавить проверку безопасности
+if (!isset($_POST['token']) || $_POST['token'] !== 'ваш_секретный_токен') {
+    die('Unauthorized access');
+}
+
+// Добавить валидацию входных данных
+$name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
+$phone = filter_input(INPUT_POST, 'phone', FILTER_SANITIZE_STRING);
+
+if (!$name || !$phone) {
+    die('Invalid input data');
+}
+
 // Логируем полученные параметры
 error_log('Parameters: ' . print_r($_GET, true));
 
 // Получаем параметры
-$name = isset($_GET['name']) ? $_GET['name'] : '';
-$phone = isset($_GET['phone']) ? $_GET['phone'] : '';
 $plotId = isset($_GET['plotId']) ? $_GET['plotId'] : '';
 $square = isset($_GET['square']) ? $_GET['square'] : '';
 

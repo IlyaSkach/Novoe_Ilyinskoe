@@ -1,3 +1,15 @@
+:root {
+  --primary-font: "Roboto", Arial, sans-serif;
+  --primary-color: #000;
+  --secondary-color: #666;
+  --background-light: #f9f9f9;
+  --transition-default: all 0.3s;
+  --container-width: 1200px;
+  --spacing-section: 100px;
+  --spacing-mobile: 60px;
+  --border-radius: 8px;
+}
+
 /* Reset */
 * {
   margin: 0;
@@ -5,8 +17,9 @@
   box-sizing: border-box;
 }
 
+/* Базовые стили */
 body {
-  font-family: "Roboto", Arial, sans-serif;
+  font-family: var(--primary-font);
   line-height: 1.5;
   padding-top: 120px; /* Высота хедера + отступ */
 }
@@ -18,7 +31,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Roboto", Arial, sans-serif;
+  font-family: var(--primary-font);
   font-weight: 700;
 }
 
@@ -35,12 +48,12 @@ h6 {
 }
 
 .btn {
-  font-family: "Roboto", Arial, sans-serif;
+  font-family: var(--primary-font);
   font-weight: 500;
 }
 
 .modal__title {
-  font-family: "Roboto", Arial, sans-serif;
+  font-family: var(--primary-font);
   font-weight: 700;
 }
 
@@ -58,7 +71,7 @@ h6 {
 
 /* Container */
 .container {
-  max-width: 1200px;
+  max-width: var(--container-width);
   margin: 0 auto;
   padding: 0 15px;
 }
@@ -68,7 +81,7 @@ h6 {
   padding: 10px 20px;
   border-radius: 4px;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: var(--transition-default);
 }
 
 .btn:hover {
@@ -254,8 +267,8 @@ h6 {
 
 /* Features section */
 .features {
-  padding: 100px 0;
-  background-color: #f9f9f9;
+  padding: var(--spacing-section) 0;
+  background-color: var(--background-light);
 }
 
 .features__inner {
@@ -275,7 +288,7 @@ h6 {
 .features__image img {
   width: 100%;
   height: auto;
-  border-radius: 8px;
+  border-radius: var(--border-radius);
 }
 
 .features__title {
@@ -305,7 +318,7 @@ h6 {
 
 /* Benefits section */
 .benefits {
-  padding: 100px 0;
+  padding: var(--spacing-section) 0;
 }
 
 .benefits__inner {
@@ -321,7 +334,7 @@ h6 {
 .benefits__image img {
   width: 100%;
   height: auto;
-  border-radius: 8px;
+  border-radius: var(--border-radius);
 }
 
 .benefits__content {
@@ -400,7 +413,7 @@ h6 {
 @media (max-width: 576px) {
   .features,
   .benefits {
-    padding: 60px 0;
+    padding: var(--spacing-mobile) 0;
   }
 
   .benefits__buttons {
@@ -411,7 +424,7 @@ h6 {
 
 /* News section */
 .news {
-  padding: 100px 0;
+  padding: var(--spacing-section) 0;
   background-color: #fff;
 }
 
@@ -456,10 +469,10 @@ h6 {
   gap: 40px;
   align-items: center;
   padding: 40px;
-  border-radius: 8px;
-  background-color: #f9f9f9;
+  border-radius: var(--border-radius);
+  background-color: var(--background-light);
   margin-bottom: 30px;
-  transition: transform 0.3s;
+  transition: var(--transition-default);
 }
 
 .news-card__content {
@@ -473,7 +486,7 @@ h6 {
 .news-card__image img {
   width: 100%;
   height: auto;
-  border-radius: 8px;
+  border-radius: var(--border-radius);
   object-fit: cover;
 }
 
@@ -481,7 +494,7 @@ h6 {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: var(--border-radius);
 }
 
 .news-video {
@@ -540,7 +553,7 @@ h6 {
 
 @media (max-width: 576px) {
   .news {
-    padding: 60px 0;
+    padding: var(--spacing-mobile) 0;
   }
 
   .news-card {
@@ -560,8 +573,8 @@ h6 {
 
 /* Contact section */
 .contact {
-  padding: 80px 0;
-  background-color: #f9f9f9;
+  padding: var(--spacing-section) 0;
+  background-color: var(--background-light);
 }
 
 .contact__inner {
@@ -594,7 +607,7 @@ h6 {
 /* Медиа-запросы для секции контактов */
 @media (max-width: 768px) {
   .contact {
-    padding: 60px 0;
+    padding: var(--spacing-mobile) 0;
   }
 
   .contact__title {
@@ -737,7 +750,7 @@ h6 {
   max-width: 800px;
   margin: 50px auto;
   padding: 40px;
-  border-radius: 8px;
+  border-radius: var(--border-radius);
 }
 
 .modal__close {
@@ -789,7 +802,7 @@ h6 {
   width: 100%;
   max-height: 70vh; /* Максимальная высота 70% от высоты экрана */
   object-fit: contain; /* Изменено с cover на contain */
-  border-radius: 8px;
+  border-radius: var(--border-radius);
   background-color: #f5f5f5; /* Фон для прозрачных изображений */
 }
 
@@ -1074,4 +1087,183 @@ h6 {
 
 .animate-delay-3 {
   transition-delay: 0.6s;
+}
+
+.advantages {
+  padding: var(--spacing-section) 0;
+  max-width: var(--container-width);
+  margin: 0 auto;
+}
+
+.advantages__title {
+  font-size: 36px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.advantages__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  padding: 0 20px;
+}
+
+.advantage-card {
+  background: #fff;
+  border-radius: var(--border-radius);
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: var(--transition-default);
+}
+
+.advantage-card:hover {
+  transform: translateY(-5px);
+}
+
+.advantage-card__icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 16px;
+}
+
+.advantage-card__title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.advantage-card__description {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #666;
+  margin-bottom: 16px;
+}
+
+.advantage-card__link {
+  display: flex;
+  align-items: center;
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.advantage-card__link-arrow {
+  margin-left: 8px;
+  transition: transform 0.2s ease;
+}
+
+.advantage-card__link:hover .advantage-card__link-arrow {
+  transform: translateX(5px);
+}
+
+/* Адаптивность для маленьких экранов */
+@media (max-width: 768px) {
+  .advantages__title {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+
+  .advantages__grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .advantage-card {
+    padding: 20px;
+  }
+}
+
+/* Объединяем повторяющиеся стили для шрифтов */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.btn,
+.modal__title {
+  font-family: var(--primary-font);
+}
+
+/* Объединяем веса шрифтов */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.hero__title,
+.modal__title,
+.features__title {
+  font-weight: 700;
+}
+
+.nav__link,
+.btn,
+.features__item h3 {
+  font-weight: 500;
+}
+
+.hero__text,
+.features__text {
+  font-weight: 300;
+}
+
+/* Объединяем общие стили для секций */
+.features,
+.benefits,
+.news,
+.contact {
+  padding: var(--spacing-section) 0;
+}
+
+/* Общие стили для карточек */
+.news-card,
+.advantage-card {
+  border-radius: var(--border-radius);
+  transition: var(--transition-default);
+}
+
+/* Общие стили для изображений */
+.features__image img,
+.benefits__image img,
+.news-card__image img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--border-radius);
+}
+
+/* Общие медиа-запросы */
+@media (max-width: 768px) {
+  .features,
+  .benefits,
+  .news,
+  .contact {
+    padding: var(--spacing-mobile) 0;
+  }
+
+  .features__inner,
+  .benefits__inner,
+  .news-card {
+    flex-direction: column;
+  }
+
+  .features__title,
+  .benefits__title,
+  .contact__title {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 576px) {
+  .features__buttons,
+  .benefits__buttons,
+  .news-card__buttons,
+  .contact__buttons {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
 }

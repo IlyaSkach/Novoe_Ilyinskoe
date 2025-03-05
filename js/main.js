@@ -259,3 +259,18 @@ function openTelegram() {
     window.location.href = webLink;
   }, 100);
 }
+
+// Объединить все обработчики событий
+document.addEventListener("DOMContentLoaded", () => {
+  initBurgerMenu();
+  initSlider();
+  initAnimations();
+  initModals();
+});
+
+// Вынести повторяющиеся функции в утилиты
+const utils = {
+  toggleClass: (element, className) => element.classList.toggle(className),
+  addClass: (element, className) => element.classList.add(className),
+  removeClass: (element, className) => element.classList.remove(className),
+};
